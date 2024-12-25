@@ -1,26 +1,35 @@
--- Set <space> as the leader key
---
--- See `:help mapleader`
---  NOTE: Must happen before plugins are loaded (otherwise wrong leader will
---        be used)
+-----------------------------------------------------------
+--- Map Leader
+-----------------------------------------------------------
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+
+
+-----------------------------------------------------------
+--- Modern PC Options
+-----------------------------------------------------------
 vim.opt.termguicolors = true
+vim.g.have_nerd_font = true
+vim.opt.mouse = 'a'
+
+
+
+-----------------------------------------------------------
+--- Tab Options
+-----------------------------------------------------------
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.bo.softtabstop = 4
 
--- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = true
 
--- Make line numbers default
+
+-----------------------------------------------------------
+--- Preferences
+-----------------------------------------------------------
 vim.opt.number = true
 vim.opt.relativenumber = true
-
--- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = 'a'
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false

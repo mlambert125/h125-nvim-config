@@ -1,9 +1,14 @@
+--------------------------------------------------------------------------------
+--- Requires
+--------------------------------------------------------------------------------
 require("options")
-require("keymap")
+require("keymaps")
 require("autocommands")
 
+
+
 --------------------------------------------------------------------------------
--- Lazy
+-- Initialize Lazy Plugin Manager
 --------------------------------------------------------------------------------
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -16,10 +21,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 require('lazy').setup("plugins")
 
+
+
 --------------------------------------------------------------------------------
 -- Custom 
 --------------------------------------------------------------------------------
--- Execute lua
 vim.keymap.set('n', '<leader>ll', function()
     vim.cmd("'a,'b s/^/local /gie")
     vim.cmd("'a,'b s/lambda x: x\\(.*\\)/function(dv_, num) return num\\1 end/gie")
