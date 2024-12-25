@@ -1,4 +1,4 @@
 # Hobbit's Neovim Configuration
 
-This is my Neovim configuration files.
+These are my Neovim configuration files.
 
