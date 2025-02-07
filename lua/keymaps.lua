@@ -28,7 +28,10 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
-
+vim.keymap.set('v', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set('v', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+vim.keymap.set('v', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('v', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 
 -----------------------------------------------------------
@@ -130,7 +133,6 @@ vim.keymap.set('n', '<leader>k', function() require("telescope.builtin").keymaps
     { desc = 'Search Keymaps' })
 vim.keymap.set('n', '<leader>f', function() require("telescope.builtin").find_files({ hidden = true }) end,
     { desc = 'Search Files' })
-
 vim.keymap.set('n', '<leader>S', function() require("telescope.builtin").builtin() end,
     { desc = 'Search Select Telescope' })
 vim.keymap.set('n', '<leader>w', function() require("telescope.builtin").grep_string() end,
@@ -148,6 +150,18 @@ vim.keymap.set('n', '<leader><leader>', function() require("telescope.builtin").
 vim.keymap.set('n', 'gr', function() require("telescope.builtin").lsp_references() end,
     { desc = 'Goto References' })
 
+vim.keymap.set("n", "<leader>m", function()
+        local actions = require("CopilotChat.actions")
+        require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+    end,
+    { desc = "CopilotChat - Prompt actions" }
+)
+vim.keymap.set("v", "<leader>m", function()
+        local actions = require("CopilotChat.actions")
+        require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+    end,
+    { desc = "CopilotChat - Prompt actions" }
+)
 
 
 -----------------------------------------------------------
