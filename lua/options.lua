@@ -13,6 +13,7 @@ vim.opt.termguicolors = true
 vim.g.have_nerd_font = true
 vim.opt.mouse = 'a'
 vim.opt.fileformat = 'unix'
+vim.opt.wrap = false
 
 
 
