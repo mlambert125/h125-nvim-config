@@ -17,6 +17,7 @@ return {
         },
         config = function()
             require('telescope').setup {
+                file_ignore_patterns = { 'vendored', 'node_modules', '%.jpg', '%.jpeg', '%.png', '%.svg', '%.otf', '%.ttf' },
                 extensions = {
                     ['ui-select'] = {
                         require('telescope.themes').get_dropdown(),

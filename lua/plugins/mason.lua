@@ -1,6 +1,6 @@
 return {
     {
         'williamboman/mason.nvim',
-        opts = {},
+        opts = { PATH = "append" },
     },
 }

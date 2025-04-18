@@ -11,6 +11,7 @@ return {
                     'lua_ls',
                     'ts_ls',
                     'omnisharp',
+                    'rust_analyzer',
                 },
                 handlers = {
                     function(server_name)
@@ -23,6 +24,20 @@ return {
                                     diagnostics = {
                                         globals = { 'vim' },
                                     },
+                                },
+                            },
+                        }
+                    end,
+                    ['rust_analyzer'] = function()
+                        require('lspconfig').rust_analyzer.setup {
+                            settings = {
+                                ['rust-analyzer'] = {
+                                    checkOnSave = {
+                                        command = 'clippy',
+                                    },
+                                    diagnostics = {
+                                      enable = false;
+                                    }
                                 },
                             },
                         }
